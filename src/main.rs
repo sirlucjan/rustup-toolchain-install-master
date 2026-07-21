@@ -2,7 +2,7 @@
 
 use std::borrow::Cow;
 use std::env::set_current_dir;
-use std::fs::{create_dir_all, rename};
+use std::fs::{create_dir_all, remove_dir_all, rename};
 use std::io::{Write, stderr, stdout};
 use std::iter::once;
 use std::ops::Deref;
@@ -16,7 +16,6 @@ use anyhow::{Context, Error, anyhow, bail, ensure};
 use clap::{Parser, crate_version};
 use colored::Colorize;
 use pbr::{ProgressBar, Units};
-use remove_dir_all::remove_dir_all;
 use reqwest::blocking::{Client, ClientBuilder};
 use reqwest::header::{ACCEPT, AUTHORIZATION, CONTENT_LENGTH, HeaderMap, HeaderValue, USER_AGENT};
 use reqwest::{Proxy, StatusCode};
